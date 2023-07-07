@@ -1,2 +1,2 @@
 # JavaScript
-Here, I have practiced and do some small projects
+Here, I have practiced and done some small projects
