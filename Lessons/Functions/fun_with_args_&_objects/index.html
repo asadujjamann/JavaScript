@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions with Arguments and Objects</title>
+</head>
+<body>
+
+    <script>
+        
+        function myFun(x, y){
+            x = m.myNumber = 12;
+            y = 4;
+            let z = x * y;
+            return z;
+        }
+
+        let m = {
+            myNumber: 5
+        }; // Objects are passed by Reference
+
+        let l = 6; // Arguments are passed by Value
+
+        let result = myFun(m, l);
+        console.log(result);
+
+
+        console.log(l);
+        console.log(m.myNumber);
+
+    </script>
+</body>
+</html>
+
