@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions Closures</title>
+    <style>
+        #btn{
+            background-color: red;
+            color: rgb(255, 255, 255);
+            border: 0;
+            padding: 8px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #output{
+            margin-top: 20px;
+            background-color: rgb(46, 87, 46);
+            color: white;
+            width: 100px;
+            height: 100px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Click the button to Increase the Number</h2>
+
+    <button id="btn">
+        Click
+    </button>
+
+    <div id="output">0</div>
+
+
+
+    <script>
+
+        const add = (function(){
+            let counter = 0;
+            return function(){
+                // counter = counter + 1;
+                counter += 1;
+                return counter;
+            }
+        })();
+
+
+
+        document.getElementById('btn').addEventListener('click', function(){
+            document.getElementById('output').innerHTML = add();
+        });
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+
+    <script>
+        
+        // Simply we can find the max value using this "max()" method
+        let myMaxMethod = Math.max(2, 5, 6, 7, 24);
+        console.log(myMaxMethod);
+
+
+
+        // But if we want to Find the max value using Array, then we should use this "apply()" method. The first parameter indicates "this"
+        let myArray = [
+            2, 5, 6, 7, 24
+        ];
+        
+        let maxValue = Math.max.apply(Math, myArray);
+        console.log(maxValue)
+        
+    </script>
+    
+</body>
+</html>
