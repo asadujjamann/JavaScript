@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Output</title>
+</head>
+<body>
+
+    <!-- _01 -->
+    <div>
+        <h2>To access an HTML element, JavaScript can use the <mark id="demo"></mark> method.</h2>
+    </div>
+
+    <!-- _02 -->
+    <div>
+        <h2>This is line 1</h2>
+        <h2>This is line 2</h2>
+        <p>Using document.write() after an HTML document is loaded, will delete all existing HTML</p>
+        <button id="forDocWrite">Click here to delete all existing HTML (document.write() method)</button>
+    </div>
+    <br>
+
+    <!-- _03 -->
+    <div>
+        <button class="windAlert">Click here to Window Alert !</button>
+    </div>
+    <br>
+
+    <!-- _04 -->
+    <div>
+        <button class="windPrint">Click here to Window Print !</button>
+    </div>
+
+
+
+
+<script>
+
+    // _01
+    document.getElementById("demo").innerHTML = "document.getElementById(id)";
+
+    // _02
+    document.getElementById("forDocWrite").addEventListener("click", function(){
+        document.write(5+6);
+    });
+
+    // _03
+    document.querySelector(".windAlert").addEventListener("click", function(){
+        window.alert(5+6);
+    });
+
+    // _04
+    document.querySelector(".windPrint").addEventListener("click", function(){
+        window.print(5+6);
+    });
+
+</script>
+
+</body>
+</html>
+
