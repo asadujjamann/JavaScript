@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Variables</title>
+    <style>
+        iframe {
+            border: 2px solid red; 
+            width: 100%;
+            min-height: 700px;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vTiCyVJiECKiTsxG6AN12uLcpmOn37Wm70R_QAQ0OOMV0SZFFlDoDvlOIQfUm59iJH92WvqsAjuqGDV/pub?embedded=true"></iframe>
+
+
+    <button id="clickMe">Click Here</button>
+
+    <script>
+        let price1 = 50;
+        let price2 = 60;
+        let total = price1 + price2 + "$";
+
+        document.getElementById("clickMe").addEventListener("click", function(){
+            alert(total);
+        });
+        document.write("<br><br>");
+
+
+        let x = 5 + 2 + 3; // The result of adding 5 + 2 + 3 is 10
+        let y = "John" + " " + "Doe"; // The result of adding "John" + " " + "Doe" is  John Doe
+        let z = "5" + 2 + 3; // The result of adding "5" + 2 + 3 is  523
+        let s = 2 + 3 + "5"; // The result of adding 2 + 3 + "5" is  55
+
+        document.write(x); document.write("<br>");
+        document.write(y); document.write("<br>");
+        document.write(z); document.write("<br>");
+        document.write(s); document.write("<br>");
+
+
+        let $ = "Hello World";
+        let $$$ = 2;
+        let $myMoney = 5;
+
+        let _lastName = "Johnson";
+        let _x = 2;
+        let _100 = 5;
+
+
+    </script>
+</body>
+</html>
+
+
