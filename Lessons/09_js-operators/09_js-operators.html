@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Operators</title>
+    <style>
+        iframe {
+            border: 2px solid red; 
+            width: 100%;
+            min-height: 700px;
+            margin-bottom: 50px;
+        }
+        body{
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vTiCyVJiECKiTsxG6AN12uLcpmOn37Wm70R_QAQ0OOMV0SZFFlDoDvlOIQfUm59iJH92WvqsAjuqGDV/pub?embedded=true"></iframe>
+
+
+
+    
+    <!-- <h6 id="test"></h6> -->
+
+
+<script>
+
+
+
+///////////   Arithmetic Operator   ///////////
+{
+    let x = 10;
+    let y = 3;
+    let z = x ** y;
+    console.log(z); // The Result will be 1000
+}
+
+{
+    let x = 10;
+    let y = 3;
+    let z = Math.pow(x,y);
+    console.log(z);  // The Result will be 1000
+}
+
+{
+    let x = 40 / (2 * 10);
+    console.log(x)
+}
+
+
+{
+    let x = 100 + 50 * 3; // As in traditional mathematics, multiplication is done first.
+}
+{
+    let x = (100 + 50) * 3; // When using parentheses, operations inside the parentheses are computed first.
+}
+{
+    let x = 100 / 50 * 3; // Operations with the same precedence (like * and /) are computed from left to right
+}
+
+
+
+///////////   Assignment Operator   ///////////
+{
+    let x = 10;
+    x %= 5;
+    console.log(x);
+}
+
+{
+    let x = 5;
+    x <<= 1;
+    console.log(x);
+}
+
+
+
+///////////   Comparison Operator   ///////////
+{
+    x = 5;
+    y = 8;
+    console.log(x == y);
+}
+
+{
+    let age = 13;
+    if (age < 18) text = "Too young to buy alcohol";
+    console.log(text);
+}
+
+{
+    let age = 15;
+    let voteable = (age < 18) ? "Too young" : "Old enough";
+    console.log(voteable);
+}
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Const</title>
+    <style>
+        iframe {
+            border: 2px solid red; 
+            width: 100%;
+            min-height: 700px;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vTiCyVJiECKiTsxG6AN12uLcpmOn37Wm70R_QAQ0OOMV0SZFFlDoDvlOIQfUm59iJH92WvqsAjuqGDV/pub?embedded=true"></iframe>
+
+
+    <h2>Variables defined with const cannot be Redeclared</h2>
+
+    <h2>Variables defined with const cannot be Reassigned</h2>
+
+    <h2>Variables defined with const have Block Scope</h2>
+
+
+    <script>
+
+        const PI = 3.1416;
+        PI = 4.1416; // Cannot be Redeclared
+
+        const _PI = 3.141592653589793;
+        _PI = 3.14;      // This will give an error
+        _PI = _PI + 10;   // This will also give an error
+
+
+        // You can create a constant array:
+        const cars = ["Saab", "Volvo", "BMW"];
+
+        // You can change an element:
+        cars[0] = "Toyota";
+
+        // You can add an element:
+        cars.push("Audi");
+
+
+        const cars2 = ["Saab", "Volvo", "BMW"];
+        cars2 = ["Toyota", "Volvo", "Audi"];    // ERROR
+
+
+        // You can create a const object:
+        const car = {type:"Fiat", model:"500", color:"white"};
+
+        // You can change a property:
+        car.color = "red";
+
+        // You can add a property:
+        car.owner = "Johnson";
+
+
+        const car2 = {type:"Fiat", model:"500", color:"white"};
+
+        car2 = {type:"Volvo", model:"EX60", color:"red"};    // ERROR
+
+
+    </script>
+</body>
+</html>
+
+

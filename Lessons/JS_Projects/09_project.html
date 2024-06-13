@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Checker For Voting</title>
+</head>
+<body>
+    
+    <!-- Comparison with Condition (Age Checker for Voting) -->
+    <h2>Input your age and click the button</h2>
+    <input id="ageValue" value="18"> <button id="ageBtn">Try it</button>
+    <h4 id="outputResult"></h4>
+
+
+
+    <script>
+    ////// Comparison with Condition (Age Checker for Voting) //////
+
+    function ageChecker(){
+        let ageValue = document.getElementById("ageValue").value;
+        let ageBtn = document.getElementById("ageBtn");
+        let outputResult = document.getElementById("outputResult");
+        
+        let ageValueNumber = Number(ageValue);
+        
+        if(isNaN(ageValueNumber)){
+            voteable = "Input is not a number";
+        } else if (ageValue < 1 || ageValue > 100) {
+            voteable = "Number Out of Range!";
+        } else if (ageValue < 18){
+            voteable = `Too Young! Age is ${ageValue} not`;
+        } else if (ageValue >= 18){
+            voteable = `Old enough! Age is ${ageValue}`;
+        } 
+        
+        outputResult.innerHTML = voteable + " to vote";
+    }
+    ageBtn.addEventListener("click", ageChecker);
+
+
+    </script>
+</body>
+</html>
