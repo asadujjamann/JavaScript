@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Objects</title>
+    <style>
+        iframe {
+            border: 2px solid red; 
+            width: 100%;
+            min-height: 700px;
+            margin-bottom: 50px;
+        }
+        body{
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vTiCyVJiECKiTsxG6AN12uLcpmOn37Wm70R_QAQ0OOMV0SZFFlDoDvlOIQfUm59iJH92WvqsAjuqGDV/pub?embedded=true"></iframe>
+
+
+<p id="para"></p>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+
+<script>
+
+{
+    const person = {};
+    person.firstName = "John";
+    person.lastName = "Doe";
+    person.age = 50;
+    person.eyeColor = "Blue";
+
+    let personsInfo = `${person.firstName} is ${person.age} years old`;
+    console.log(personsInfo);
+}
+
+{
+    const person = new Object();
+    // Add Properties
+    person.firstName = "John";
+    person.lastName = "Doe";
+    person.age = 50;
+    person.eyeColor = "blue";
+}
+
+{
+    const person = {
+        firstName: "Asad",
+        lastName: "Bin Hasan",
+        id: 2723,
+        studying: function() {
+            let personStudying = person.firstName + " is studying at Madina U.";
+            return personStudying;
+        }
+    }
+    console.log(person.studying());
+}
+
+
+{
+    const person = {
+        firstName: "Asad",
+        lastName: "Bin Hasan",
+        age: 25,
+    }
+
+    let meItself = person;
+    let myAge = "age";
+    let changeMyAge = meItself.myAge = "My new age is " + 29;
+    console.log(changeMyAge);
+}
+
+
+{
+    const person = {
+        firstName: "Asad",
+        lastName: "Bin Hasan",
+        age: 29,
+    }
+    delete person.age;
+    console.log(person);
+}
+
+
+{
+    const person = {
+        name: "Asad Bin Hasan",
+        age: 29,
+        myTools: {
+            laptop: "Macbook",
+            mouse: "Logitech",
+            headphpne: "Canleen",
+        }
+    }
+    let myHeadphone = person.myTools.headphpne;
+    // let myHeadphone = person["myTools"]["headphpne"];
+    console.log(myHeadphone);
+}
+
+
+
+{
+    const person = {
+        firstName: "Asad",
+        lastName: "Bin Hasan",
+        id: 2723,
+        learn: function(){
+            let learningTool = this.firstName + " is learning JavaScript";
+            return learningTool;
+        }
+    }
+    person.typing = function(){
+        let asadTypeing = this.firstName + " is typing Keyboard.";
+        return asadTypeing;
+    }
+    console.log(person.learn());
+    console.log(person.typing());
+}
+
+
+// Displaying the Object Properties in a Loop
+{
+    const person = {
+        name: "Asad Bin Hasan",
+        age: 29,
+        city: "Rangpur",
+    }
+    let values = "";
+    for(let keys in person){
+        console.log(keys);
+        values += person[keys] + "<br>";
+    }
+    document.getElementById("para").innerHTML = values;
+}
+
+
+// Displaying the Object using Object.values()
+{
+    const person = {
+        name: "Asad Bin Hasan",
+        age: 29,
+        city: "Rangpur",
+    }
+    const myArray = Object.values(person);
+    document.getElementById("demo").innerHTML = myArray;
+}
+
+
+// Displaying the Object using Object.entries()
+{
+    const person = {
+        Name: "Asad Bin Hasan",
+        Age: 29,
+        City: "Rangpur",
+    };
+
+    let values = "";
+    for(let [key, value] of Object.entries(person)) {
+        values += key + ": " + value + "<br>";
+    }
+    document.getElementById("demo2").innerHTML = values;
+}
+
+
+// Displaying the Object using Object.stringify()
+{
+    const person = {
+        name: "Asad Bin Hasan",
+        age: 29,
+        city: "Rangpur",
+    }
+    let myString = JSON.stringify(person);
+    document.getElementById("demo3").innerHTML = myString;
+    // Result is - {"name":"Asad Bin Hasan","age":29,"city":"Rangpur"}
+}
+
+
+
+
+
+</script>
+    
+</body>
+</html>
+

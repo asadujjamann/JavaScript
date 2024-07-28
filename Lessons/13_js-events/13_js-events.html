@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+    <style>
+        iframe {
+            border: 2px solid red; 
+            width: 100%;
+            min-height: 700px;
+            margin-bottom: 50px;
+        }
+        body{
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vTiCyVJiECKiTsxG6AN12uLcpmOn37Wm70R_QAQ0OOMV0SZFFlDoDvlOIQfUm59iJH92WvqsAjuqGDV/pub?embedded=true"></iframe>
+
+
+<button onclick="displayDate()">Click to show the Time!</button>
+
+<div id="demo"></div>
+
+<script>
+    function displayDate(){
+        document.getElementById('demo').innerHTML = Date();
+    }
+</script>
+    
+</body>
+</html>
+

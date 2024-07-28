@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS String</title>
+    <style>
+        iframe {
+            border: 2px solid red; 
+            width: 100%;
+            min-height: 700px;
+            margin-bottom: 50px;
+        }
+        body{
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- <iframe src="https://docs.google.com/document/d/e/2PACX-1vTiCyVJiECKiTsxG6AN12uLcpmOn37Wm70R_QAQ0OOMV0SZFFlDoDvlOIQfUm59iJH92WvqsAjuqGDV/pub?embedded=true"></iframe> -->
+
+
+<div id="demo"></div>
+
+
+<script>
+{
+    let text = "We are the so-called \"vikings\" " + 
+    "from the north.";
+    document.getElementById("demo").innerHTML = text;
+}
+
+{
+    let carName1 = "Volvo XC60";  // Double quotes
+    let carName2 = 'Volvo XC61';  // Single quotes
+    
+    console.log(carName1);
+    console.log(carName2);
+}
+
+{
+    let answer1 = "He is called 'Johnny'"; // Quotes Inside Quotes
+    let answer2 = 'He is called "Johnny"'; // Quotes Inside Quotes
+
+    console.log(answer1);
+    console.log(answer2);
+}
+
+{
+    let text = `He's often called "Johnny"`; // Template Strings
+    console.log(text);
+}
+
+{
+    // String Length
+    let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let length = text.length;
+    console.log(length);
+}
+
+{
+    // Escape Characters
+    let text = 'We are the so-called \\Vikings\\ from the north.';
+    console.log(text);
+}
+
+{
+    // Breaking Long Lines
+    document.getElementById("demo").innerHTML = "Hello " +
+    "Dolly!";
+}
+
+{
+    // Strings as Objects
+    let x = "John";
+    let y = new String("John");
+    console.log(x === y); // False
+}
+
+{
+    // Strings as Objects
+    let x = new String("John");
+    let y = new String("John");
+    console.log(x == y); // False
+}
+
+
+/***************** String Methods *****************/
+
+{
+    // charAt()
+    let text = "Hello World";
+    console.log(text.charAt(0)); // Result = H
+    console.log(text.charAt(1)); // Result = e
+}
+
+{
+    // charCodeAt()
+    let text = "Hello World";
+    console.log(text.charCodeAt(0)); // Result = 72
+    console.log(text.charCodeAt(1)); // Result = 101
+    console.log(text.charCodeAt(2)); // Result = 108
+}
+
+{
+    // at()
+    let text = "Hello World";
+    console.log(text.at(6)); // Result = W
+}
+
+{
+    // []
+    let text = "Hello World";
+    console.log(text[6]); // Result = W
+}
+
+{
+    // slice(start, end)
+    let text = "Apple, Banana, Kiwi";
+    console.log(text.slice(7, 13)); // Result = Banana
+
+    let text2 = "Apple, Banana, Kiwi";
+    console.log(text2.slice(7)); // Result = Banana, Kiwi
+
+    let text3 = "Apple, Banana, Kiwi";
+    console.log(text3.slice(-12, -6)); // Result = Banana
+
+    let text4 = "Apple, Banana, Kiwi";
+    console.log(text4.slice(-4)); // Result = Kiwi
+}
+
+{
+    // substring(start, end)
+    let str = "Apple, Banana, Kiwi";
+    console.log(str.substring(7, 13)); // Result = Banana
+}
+
+console.log("\n");
+
+{
+    // substr(start, length)
+    let str = "Apple, Banana, Kiwi";
+    console.log(str.substr(7, 6)); // Result = Banana
+
+    let str2 = "Apple, Banana, Kiwi";
+    console.log(str2.substr(7)); // Result = Banana, Kiwi
+
+    let str3 = "Apple, Banana, Kiwi";
+    console.log(str3.substr(-4)); // Result = Kiwi
+
+    let str4 = "Apple, Banana, Kiwi";
+    console.log(str4.substr(-4, 2)); // Result = Ki
+}
+
+{
+    // Converting to Upper and Lower Case
+    let text1 = "Hello World";
+    console.log(text1.toUpperCase());
+
+    let text2 = "Hello World";
+    console.log(text2.toLowerCase());
+}
+
+{
+    // concat()
+    let text1 = "Hello";
+    let text2 = "World";
+    console.log(text1.concat(" ", text2));
+}
+
+{
+    // trim()
+    let text = "    Hello World    ";
+    let textTrim = text.trim();
+    console.log(text.length);  // Result = 19
+    console.log(textTrim.length); // Result = 11
+}
+
+{
+    // trimStart()
+    let text = "    Hello World    ";
+    let textTrimStart = text.trimStart(); // removes whitespace only from the start of a string
+    console.log(text.length);  // Result = 19
+    console.log(textTrimStart.length); // Result = 15
+}
+
+{
+    // trimEnd()
+    let text = "    Hello World    ";
+    let textTrimEnd = text.trimEnd(); // removes whitespace only from the end of a string
+    console.log(text.length);  // Result = 19
+    console.log(textTrimEnd.length); // Result = 15
+}
+
+{
+    // padStart()
+    // The padStart() method is a string method.
+    // To pad a number, convert the number to a string first.
+    let numb = 2;
+    let text = numb.toString();
+    console.log(text.padStart(4, "0")); // Result = 0002 (total four characters)
+}
+
+{
+    // padEnd()
+    // The padEnd() method is a string method.
+    // To pad a number, convert the number to a string first.
+    let numb = 2;
+    let text = numb.toString();
+    console.log(text.padEnd(6, "c")); // Result = 2ccccc (total six characters)
+}
+
+
+{
+    // repeat()   string.repeat(count)
+    let text = "Hello World! ";
+    console.log(text.repeat(2)); // Hello World! Hello World!
+}
+
+{
+    // replace()
+    let text = "Please visit Microsoft!";
+    let newText = text.replace("Microsoft", "W3Schools");
+    console.log(newText);  // Result = Please visit W3Schools!
+}
+
+{
+    // To replace all matches, use a regular expression with a /g flag.
+    let text = "W3Schools is a learning platform. Please visit W3Schools.";
+    let newText = text.replace(/W3Schools/g, "Udemy");
+    console.log(newText); // Result = Udemy is a learning platform. Please visit Udemy.
+}
+
+{
+    // To replace case insensitive, use a regular expression with an /i flag (insensitive)
+    let text = "Please visit Microsoft!";
+    let newText = text.replace(/MiCroSoft/i, "W3Schools"); // result = Please visit W3Schools!
+    console.log(newText);
+}
+
+{
+    // To replace case insensitive and all matches
+    let text = "I love birds. Birds are easy to love. Birds are popular.";
+    let newText = text.replace(/BirDs/ig, "Cats"); // result = I love Cats. Cats are easy to love. Cats are popular.
+    console.log(newText);
+}
+
+
+{
+    // replaceAll()
+    let text = "Birds.....bIRds.....Birds.....birds....BIRds";
+    let newText = text.replaceAll("Birds", "Cats");
+    console.log(newText); // Cats.....bIRds.....Cats.....birds....BIRds
+}
+
+{
+    // replaceAll()
+    let text = "Birds.....bIRds.....Birds.....birds....BIRds";
+    let newText = text.replaceAll(/Birds/gi, "Cats");
+    console.log(newText); // Cats.....Cats.....Cats.....Cats....Cats
+}
+
+{
+    // split()   A string can be converted to an array with the split();
+    let text = "Asadujjaman";
+    let myArray = text.split("");
+    text = "";
+    for(let i = 0; i < myArray.length; i++){
+        text += myArray[i] + ", ";
+    }
+    console.log(text); // Result = A, s, a, d, u, j, j, a, m, a, n,
+    document.write(text);
+}
+
+console.log("\n");
+
+/***************** String Search *****************/
+{
+    // indexOf()
+    let text = "Please locate where 'locate' occurs!";
+    let indexPosition = text.indexOf("locate");
+    console.log(indexPosition); // Result = 7
+}
+{
+    // indexOf()
+    let text = "Please locate where 'locate' occurs!";
+    let indexPosition = text.indexOf("locate", 8); // Search from 8th position
+    console.log(indexPosition); // Result = 21
+}
+
+{
+    // lastIndexOf()
+    let text = "Please locate where 'locate' occurs!";
+    let lastIndexPosition = text.lastIndexOf("locate");
+    console.log(lastIndexPosition); // Result = 21
+}
+{
+    // lastIndexOf()
+    let text = "Please locate where 'locate' occurs!";
+    let lastIndexPosition = text.lastIndexOf("locate", 20); // Search from 20th position
+    console.log(lastIndexPosition); // Result = 7
+}
+
+{
+    // search()
+    let text = "Please locates where 'locate' occurs!";
+    let textSearch = text.search("locate");
+    console.log(textSearch);
+}
+
+
+
+
+</script>
+
+</body>
+</html>
+
