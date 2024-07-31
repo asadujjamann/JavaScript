@@ -22,6 +22,8 @@
 
 
 <div id="demo"></div>
+<div id="demo2"></div>
+<div id="demo3"></div>
 
 
 <script>
@@ -285,8 +287,9 @@ console.log("\n");
 {
     // indexOf()
     let text = "Please locate where 'locate' occurs!";
-    let indexPosition = text.indexOf("locate", 8); // Search from 8th position
-    console.log(indexPosition); // Result = 21
+    let firstIndexPosition = text.indexOf("locate");
+    let indexPosition = text.indexOf("locate", firstIndexPosition + 1); // Search from 8th position
+    console.log(indexPosition ); // Result = 21
 }
 
 {
@@ -304,10 +307,113 @@ console.log("\n");
 
 {
     // search()
+    // The search() method Only take the First start position argument.
     let text = "Please locates where 'locate' occurs!";
     let textSearch = text.search("locate");
-    console.log(textSearch);
+    console.log(textSearch); // Result = 7
 }
+
+console.log("\n");
+
+
+
+/***************** String Match *****************/
+{
+let text = "The rAin in SPAIN stays mainly in the plain";
+let matchArray = text.match("ain");
+console.log(matchArray.length); // Result = 1
+console.log(matchArray.index); // Result = 25
+}
+
+{
+let text = "The rAin in SPAIN stays mainly in the plain";
+let matchArray = text.match(/ain/ig);
+console.log(matchArray.length); // Result = 4
+}
+
+{
+let text = "I love cats. Cats are very easy to love. Cats are very popular";
+const textMatchAll = text.matchAll("cats");
+const iterator = Array.from(textMatchAll);
+
+document.getElementById("demo2").innerHTML = iterator; // Result = cats,Cats,Cats
+}
+
+
+
+
+console.log("\n");
+
+
+/***************** String Match *****************/
+{
+// The includes() method returns true if a string contains a specified value.
+let text = "Hello world, welcome to the universe.";
+let wordInclude = text.includes("world");
+console.log(wordInclude); // Result = True
+
+let worldInclude_2 = text.includes("world", 8);
+console.log(worldInclude_2); // Result = False
+}
+
+{
+// The startsWith() method returns true if a string begins with a specified value.
+let text = "Hello world, welcome to the universe.";
+let textStartWith = text.startsWith("Hello");
+console.log(textStartWith); // Result = True
+
+let textStartWith_2 = text.startsWith("Hello", 2);
+console.log(textStartWith_2); // Result = False
+}
+
+{
+// The endsWith() method returns true if a string ends with a specified value
+let text = "Hello world, welcome to the universe";
+let textEndsWith = text.endsWith("universe");
+console.log(textEndsWith); // Result = True
+
+let textEndsWith_2 = text.endsWith("world", 11);
+console.log(textEndsWith_2); // Result = True
+}
+
+
+
+console.log("\n");
+
+
+/***************** String Template *****************/
+{
+let firstName = "Asad";
+let lastName = "Bin Hasan";
+let text = `Welcome ${firstName}, ${lastName}!`;
+console.log(text);
+}
+{
+let price = 10;
+let VAT = 0.25;
+let total = `Total: ${(price * (1+VAT)).toFixed(2)}`;
+console.log(total);
+}
+
+{
+// HTML Templates
+let header = "Web Technologies";
+let items = ["HTML", "CSS", "JavaScript", "PHP"];
+
+let html = `<h2>${header}</h2><ul>`;
+
+// for (let i = 0; i < items.length; i++) {
+//     html += `<li> ${items[i]} </li>`
+// }
+for (const x of items) {
+    html += `<li> ${x} </li>`;
+}
+
+html += `</ul>`;
+document.getElementById("demo3").innerHTML = html;
+}
+
+
 
 
 

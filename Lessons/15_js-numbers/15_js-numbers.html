@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Numbers</title>
+    <style>
+        iframe {
+            border: 2px solid red; 
+            width: 100%;
+            min-height: 700px;
+            margin-bottom: 50px;
+        }
+        body{
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- <iframe src="https://docs.google.com/document/d/e/2PACX-1vTiCyVJiECKiTsxG6AN12uLcpmOn37Wm70R_QAQ0OOMV0SZFFlDoDvlOIQfUm59iJH92WvqsAjuqGDV/pub?embedded=true"></iframe> -->
+
+
+<div id="demo"></div>
+<div id="demo2"></div>
+<div id="demo3"></div>
+<div id="demo4"></div>
+<div id="demo5"></div>
+
+<script>
+/***************** Number *****************/
+{
+let x = 999999999999999; // 15 digits
+let y = 9999999999999999; // 16 digits
+console.log(x); // Result(15 digits) = 999999999999999
+console.log(y); // Result(17 digits) = 10000000000000000
+}
+
+{
+let x = 0.2 + 0.1;
+console.log(x); // 0.30000000000000004
+}
+
+{
+let x = (0.2 * 10 + 0.1 * 10) / 10;
+console.log(x); // 0.3
+}
+
+{
+let x = "100";
+let y = "10";
+console.log(x / y); // 10
+console.log(x * y); // 1000
+console.log(x - y); // 90
+console.log(x + y); // 10010 (concatenate the strings)
+}
+
+{
+let x = 100;
+let y = "apple";
+let z = x / y;
+console.log(z); // NaN
+console.log(isNaN(z)); // true
+}
+
+{
+let x = NaN; // is a number
+let y = 5; // number
+let z = x + y;
+console.log(z); // Result = NaN
+console.log(typeof z); // Result = number
+}
+
+{
+let x = NaN;
+let y = "5"; // string
+let z = x + y;
+console.log(z); // Result = NaN5
+console.log(typeof z); // Result = string
+}
+
+{
+    let myNumber = 2;
+    let txt = "";
+    while(myNumber != Infinity){
+        myNumber = myNumber * myNumber;
+        txt += myNumber + "<br>";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+
+{
+let x = 0;
+let y = 2;
+let z = -2;
+console.log(y / x); // Infinity
+console.log(z / x); // -Infinity
+console.log(typeof Infinity); // Number
+}
+
+{
+let x = 0xFF;
+console.log(x); // 255
+}
+
+{
+let myNumber = 32;
+console.log(myNumber.toString(36)); // w    Hexatrigesimal (base 36)
+console.log(myNumber.toString(32)); // 10   Duotrigesimal (base 32)
+console.log(myNumber.toString(16)); // 20   Hexadecimal (base 16)
+console.log(myNumber.toString(12)); // 28   Duodecimal (base 12)
+console.log(myNumber.toString(10)); // 32   Decimal (base 10)
+console.log(myNumber.toString(8)); // 40    Octal (base 8)
+console.log(myNumber.toString(2)); // 100000  Binary (base 2)
+}
+
+{
+let y = new Number(123);
+console.log(y);
+}
+
+
+console.log("\n");
+/***************** BigInt *****************/
+{
+let x = 123456789012345678901234567890n;
+let y = BigInt(123456789012345678901234567890);
+console.log(x);
+console.log(y);
+document.getElementById("demo2").innerHTML = x; // 123456789012345678901234567890
+document.getElementById("demo3").innerHTML = y; // 123456789012345677877719597056
+}
+
+
+console.log("\n");
+/***************** Number Methods *****************/
+{
+// toString()
+let x = 1234567890;
+let y = x.toString();
+console.log(y);
+console.log(y.length); 
+}
+ 
+{
+// toExponential()
+let x = 9.656;
+console.log(x.toExponential(2)); // 9.66e+0
+console.log(x.toExponential(3)); // 9.656e+0
+console.log(x.toExponential(4)); // 9.6560e+0
+}
+
+{
+// toFixed()
+let x = 9.656;
+console.log(x.toFixed(2)); // 9.66
+console.log(x.toFixed(4)); // 9.6560
+console.log(x.toFixed(6)); // 9.656000
+console.log(x.toFixed(8)); // 9.65600000
+}
+
+{
+// toPrecision()
+let x = 9.656;
+console.log(x.toPrecision()); // 9.656
+console.log(x.toPrecision(2)); // 9.7
+console.log(x.toPrecision(4)); // 9.656
+console.log(x.toPrecision(6)); // 9.65600
+}
+
+{
+// valueOf()
+let x = 123;
+console.log(x.valueOf());
+}
+
+{
+// Number()
+console.log(Number(true)); // 1
+console.log(Number(false)); // 0
+console.log(Number("10")); // 10
+console.log(Number("   10")); // 10
+console.log(Number("10   ")); // 10
+console.log(Number("   10   ")); // 10
+console.log(Number("10.33")); // 10.33
+console.log(Number("10,33")); // NaN
+console.log(Number("10 33")); // NaN
+console.log(Number("Asad")); // NaN
+
+// Date() method returns the number of milliseconds since 1.1.1970
+console.log(Number(new Date("1970-01-01"))); // 0
+console.log(Number(new Date("2024-7-18"))); // 1721239200000
+}
+
+{
+// parseInt()
+console.log(parseInt("-10")); // -10
+console.log(parseInt("-10.33")); // -10
+console.log(parseInt("10")); // 10
+console.log(parseInt("10.33")); // 10
+console.log(parseInt("10 20 30")); // 10
+console.log(parseInt("10 years")); // 10
+console.log(parseInt("years 10")); // NaN
+}
+
+{
+// parseFloat()
+console.log(parseFloat("-10")); // -10
+console.log(parseFloat("-10.33")); // -10.33
+console.log(parseFloat("10")); // 10
+console.log(parseFloat("10.33")); // 10.33
+console.log(parseFloat("10 20 30")); // 10
+console.log(parseFloat("10 years")); // 10
+console.log(parseFloat("years 10")); // NaN
+}
+
+{
+// Number.isInteger()
+console.log(Number.isInteger(10)); // true
+console.log(Number.isInteger(10.5)); // false
+}
+
+{
+console.log(Number.isSafeInteger(10)); // true
+console.log(Number.isSafeInteger(9999999999999999)); // true (16 digits)
+console.log(Number.isSafeInteger(12345678901234567)); // false (17 digits)
+}
+
+{
+// Number.parseFloat() 
+console.log(Number.parseFloat("10")); // 10
+console.log(Number.parseFloat("10.33")); // 10.33
+console.log(Number.parseFloat("10 20 30")); // 10
+console.log(Number.parseFloat("10 years")); // 10
+console.log(Number.parseFloat("years 10")); // NaN
+}
+
+{
+// Number.parseInt()
+console.log(Number.parseInt("-10")); // -10
+console.log(Number.parseInt("-10.33")); // -10
+console.log(Number.parseInt("10")); // 10
+console.log(Number.parseInt("10.33")); // 10
+console.log(Number.parseInt("10 20 30")); // 10
+console.log(Number.parseInt("10 years")); // 10
+console.log(Number.parseInt("years 10")); // NaN
+}
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>
+
